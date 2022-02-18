@@ -40,8 +40,7 @@ const useLogin = () =>
 
     const handleOauth = (e) => {
         e.preventDefault()
-        window.open(`${ server }login/${e.target.getAttribute('data-provider')}`)
-        window.close()
+        window.location.href = `${server}login/${e.target.dataset.provider}`
         fetch(`${ server }user`, {
             method: 'GET',
         }
