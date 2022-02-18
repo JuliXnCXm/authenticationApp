@@ -10,13 +10,20 @@
     max-width: 356px;
     height: 48px;
     border-left: none;
+    background-color: transparent;
 
 }
 
+.formContainer input:focus {
+    outline: none;
+    background-color: transparent;
+}
+
 .input-group span {
-    background-color: white;
+    background-color: transparent;
     border-radius: 10px;
     color: gray;
+    border-right: none;
 }
 
 .form-check {

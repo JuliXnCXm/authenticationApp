@@ -1,14 +1,12 @@
 import React from 'react';
-import useAuth from '../hooks/useAuth'
 
 
-const ToggleAuth = ({setLogin}) => {
+const ToggleAuth = ({setLogin, loginState}) => {
 
-    const { isLogin } = useAuth()
 
     return (
         <>
-            {isLogin ?
+            {loginState ?
                 <div className='toggle'>
                     <span>Don’t have an account yet ?</span >
                     <span className='toggleLink' onClick={() =>

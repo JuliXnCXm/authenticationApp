@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Form, Button , InputGroup, FormControl} from 'react-bootstrap'
 import useAuth from '../hooks/useAuth'
 import '../styles/FormAuth.css'
 
 
-const FormAuth = () => {
+const FormAuth = ({setLogin}) => {
 
-    const {isLogin, handleSubmit, form , handleForm} = useAuth()
+    const { handleSubmit, form , handleForm} = useAuth()
 
     return (
-        <Form className="formContainer" onSubmit={handleSubmit}>
+        <Form className="formContainer" onSubmit={(e) => {
+            handleSubmit(e,setLogin)}}>
             <InputGroup className="mb-3 formContainer-email" controlId="formBasicEmail">
                 <InputGroup.Text id="basic-addon1" className="icon">
                     <span class="material-icons material-icons-outlined">
@@ -29,9 +30,13 @@ const FormAuth = () => {
             <Form.Group className="mb-3 formContainer-check" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Remind me" />
             </Form.Group>
-            <Button size="lg" className="formContainer-button" variant="primary" type="submit">
-                {isLogin ? 'Login' : 'Start coding now'}
-            </Button>
+            {setLogin ?
+                <Button size="lg" className="formContainer-button" variant="primary" type="submit"> Login
+                </Button>
+            :
+                <Button size="lg" className="formContainer-button" variant="primary" type="submit"> Start coding now
+                </Button>
+            }
         </Form>
     )
 };

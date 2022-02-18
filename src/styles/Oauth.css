@@ -1,4 +1,4 @@
-.content-conteiner__oauth {
+.content-container__oauth {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -6,11 +6,15 @@
     color: #828282;
 }
 
-.content-conteiner__oauth--imagesGroup {
+.content-container__oauth--imagesGroup {
     display: flex;
     justify-content: space-between;
     margin: 20px 0px;
     width: 64%;
+}
+
+.content-container__oauth--imagesGroup img {
+    cursor: pointer;
 }
 
 .toggle {

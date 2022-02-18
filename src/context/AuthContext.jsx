@@ -1,5 +1,5 @@
 import {React,createContext, useState, useEffect} from 'react'
-import { apiRegister, apiLogin } from './Api'
+import { apiRegister, apiLogin, server } from './Api'
 
 const AuthContext = createContext()
 
@@ -48,6 +48,7 @@ const AuthProvider = ({children}) => {
             }
         }).finally()
     }
+
 
     const data = {handleLogin,handleRegister,auth}
 

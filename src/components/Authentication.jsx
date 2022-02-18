@@ -24,9 +24,9 @@ const Authentication = () => {
                 }
                 </div>
         </div>
-        <FormAuth/>
+        <FormAuth setLogin={isLogin}/>
         <Oauth/>
-        <ToggleAuth setLogin={toggleState}/>
+        <ToggleAuth loginState={isLogin}  setLogin={toggleState}/>
     </div>)
 };
 
