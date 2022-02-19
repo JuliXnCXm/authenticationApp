@@ -9,6 +9,7 @@ const User = () => {
     const [ user, setUser ] = useState(null);
     const cookie = new Cookies();
     cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
+    console.log(`${ serverUser }?access_token=${ searchParams.get( 'access_token' ) }`)
     useEffect(() => {
         fetch( `${ serverUser }?access_token=${ searchParams.get( 'access_token' )}`, {
             method: 'GET',
