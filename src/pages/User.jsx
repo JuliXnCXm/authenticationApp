@@ -7,11 +7,12 @@ const User = () => {
 
     const [ searchParams, setSearchParams ] = useSearchParams();
     const [ user, setUser ] = useState(null);
-    // const cookies = new Cookies();
-    // cookies.set('access_token', searchParams.get('access_token'), { path:'/'});
-    // console.log('cookies', cookies.get('access_token'));
+    const cookie = new Cookies();
+    cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
+    console.log(cookie.get('access_token'));
+    console.log(searchParams.get('access_token'));
     useEffect(() => {
-        fetch(`${serverUser}?access_token=${searchParams.get('access_token')}`, {
+        fetch(`${serverUser}`, {
             method: 'GET',
         }).then( async (res) => {
             if(res.status === 200){
