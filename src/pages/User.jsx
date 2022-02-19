@@ -10,7 +10,7 @@ const User = () => {
     const cookies = new Cookies();
     cookies.set('access_token', searchParams.get('access_token'), { path:'/'});
     useEffect(() => {
-        fetch(`${serverUser}`, {
+        fetch(`${serverUser}?access_token=${searchParams.get('access_token')}`, {
             method: 'GET',
         }).then( async (res) => {
             if(res.status === 200){
