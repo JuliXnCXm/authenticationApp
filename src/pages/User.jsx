@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { server } from '../context/Api';
+import { server, serverUser } from '../context/Api';
 
 const User = () => {
 
@@ -9,7 +9,17 @@ const User = () => {
     const cookies = new Cookies();
     cookies.set('access_token', searchParams.get('access_token'), { path:'/'});
     useEffect(() => {
-        fetch(`${server}`)
+        fetch(`${serverUser}?access_token=${searchParams.get('access_token')}`, {
+            method: 'GET',
+        }).then( async (res) => {
+            if(res.status === 200){
+                let json = await res.json()
+                console.log(json)
+                // localStorage.setItem('user', JSON.stringify(json.user))
+            } else {
+                console.log('Error')
+            }
+        })
     }, []);
     return (
 
