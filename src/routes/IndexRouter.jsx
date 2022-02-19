@@ -8,6 +8,7 @@ const IndexRouter = () => {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/user" element={<User/>}/>
+            <Route path="*" element={<div>Not Found</div>}/>
         </Routes>
     );
 };
