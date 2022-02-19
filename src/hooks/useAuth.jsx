@@ -41,20 +41,6 @@ const useLogin = () =>
     const handleOauth = (e) => {
         e.preventDefault()
         window.location.href = `${server}login/${e.target.dataset.provider}`
-        fetch(`${ server }user`, {
-            method: 'GET',
-        }
-        ).then( async (res) => {
-            if(res.status === 200){
-                let json = await res.json()
-                localStorage.getItem('user', json.user)
-            } else {
-                console.log('Error')
-            }
-        })
-        if (auth === true) {
-            console.log('auth')
-        }
     }
 
 
