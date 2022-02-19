@@ -1,7 +1,7 @@
-import Home from './pages/Home';
 import './styles/App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect } from 'react';
+import IndexRouter from './routes/IndexRouter';
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
           <div class="ball"></div>
         </label>
       </div>
-      <Home />
+      <IndexRouter />
     </div>
   );
 }
