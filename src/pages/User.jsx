@@ -8,6 +8,7 @@ const User = () => {
 
     const [ searchParams, setSearchParams ] = useSearchParams();
     const [ user, setUser ] = useState(null);
+    const [ isLoading, setIsLoading ] = useState(true);
     const cookie = new Cookies();
     cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
 
@@ -26,9 +27,12 @@ const User = () => {
             }
         })
     }, [searchParams]);
-    console.log(user)
 
-    return (
+    setTimeout(() => {
+        setIsLoading(false)
+    }, 1000);
+
+    return ({isLoading}) ? ( <div>Loading...</div> ) : (
         <div>
             <img src="" alt="" />
             <div>
