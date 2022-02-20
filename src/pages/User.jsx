@@ -19,6 +19,7 @@ const User = () => {
             if(res.status === 200){
                 let json = await res.json()
                 setUser(json.user)
+                setIsLoading(false)
             } else {
                 console.log('Error')
                 setTimeout(() => {
@@ -27,11 +28,6 @@ const User = () => {
             }
         })
     }, [searchParams,user]);
-
-    setTimeout(() => {
-        console.log("preuba")
-        setIsLoading(false)
-    }, 10000);
 
     return (isLoading ? <div>Loading...</div> : (
         <div>
