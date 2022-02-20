@@ -29,6 +29,7 @@ const User = () => {
     }, [searchParams,user]);
 
     setTimeout(() => {
+        console.log("preuba")
         setIsLoading(false)
     }, 10000);
 
