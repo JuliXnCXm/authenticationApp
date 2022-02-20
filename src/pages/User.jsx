@@ -14,6 +14,7 @@ const User = () => {
         fetch( `${ serverUser }?access_token=${ searchParams.get( 'access_token' )}`, {
             method: 'GET',
         }).then( async (res) => {
+            console.log(res)
             if(res.status === 200){
                 let json = await res.json()
                 console.log(json)
