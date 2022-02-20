@@ -7,7 +7,7 @@ import {Table} from 'react-bootstrap';
 const User = () => {
 
     const [ searchParams, setSearchParams ] = useSearchParams();
-    const [ user, setUser ] = useState(undefined);
+    const [ user, setUser ] = useState({});
     const [ isLoading, setIsLoading ] = useState(true);
     const cookie = new Cookies();
     cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
