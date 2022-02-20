@@ -30,7 +30,7 @@ const User = () => {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 4000);
+    }, 10000);
 
     return (isLoading ? <div>Loading...</div> : (
         <div>
@@ -49,7 +49,7 @@ const User = () => {
                 </div>
                 <Table>
                     <tbody>
-                    {user ?  user.forEach((item) => {
+                    {user ?  user.map((item) => {
                         return (
                                 <tr>
                                     <td>{item.name}</td>
