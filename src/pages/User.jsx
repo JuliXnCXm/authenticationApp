@@ -32,7 +32,7 @@ const User = () => {
         setIsLoading(false)
     }, 1000);
 
-    return ({isLoading}) ? ( <div>Loading...</div> ) : (
+    return (isLoading ? <div>Loading...</div> : (
         <div>
             <img src="" alt="" />
             <div>
