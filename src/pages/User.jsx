@@ -7,7 +7,7 @@ import {Table} from 'react-bootstrap';
 const User = () => {
 
     const [ searchParams, setSearchParams ] = useSearchParams();
-    const [ user, setUser ] = useState({});
+    const [ user, setUser ] = useState(undefined);
     const [ isLoading, setIsLoading ] = useState(true);
     const cookie = new Cookies();
     cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
@@ -18,7 +18,6 @@ const User = () => {
         }).then( async (res) => {
             if(res.status === 200){
                 let json = await res.json()
-                console.log(json)
                 setUser(json.user)
             } else {
                 console.log('Error')
@@ -50,7 +49,7 @@ const User = () => {
                 </div>
                 <Table>
                     <tbody>
-                    {user ?  user.map( (item) => {
+                    {user ?  user.forEach((item) => {
                         return (
                                 <tr>
                                     <td>{item.name}</td>
