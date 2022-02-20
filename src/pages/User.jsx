@@ -18,7 +18,9 @@ const User = () => {
         }).then( async (res) => {
             if(res.status === 200){
                 let json = await res.json()
+                console.log(json)
                 setUser(json.user)
+                console.log(user)
             } else {
                 console.log('Error')
                 setTimeout(() => {
