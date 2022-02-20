@@ -30,7 +30,7 @@ const User = () => {
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 4000);
+    }, 10000);
 
     return (isLoading ? <div>Loading...</div> : (
         <div>
