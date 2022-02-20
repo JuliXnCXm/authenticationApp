@@ -49,8 +49,26 @@ const User = () => {
                             </td>
                         </tr>
                         <tr>
-                            <td>Name</td>
+                            <td>PHOTO</td>
+                            <td>
+                                <img src={user.picture} alt="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NAME</td>
                             <td>{user.name}</td>
+                        </tr>
+                        <tr>
+                            <td>BIO</td>
+                            <td>lorem</td>
+                        </tr>
+                        <tr>
+                            <td>PHONE</td>
+                            <td>345344534</td>
+                        </tr>
+                        <tr>
+                            <td>EMAIL</td>
+                            <td>{user.email}</td>
                         </tr>
                     </tbody>
                 </Table>
