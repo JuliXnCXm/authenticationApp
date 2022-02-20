@@ -2,6 +2,7 @@ import React, { useEffect ,useState} from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { serverUser } from '../context/Api';
+import {Table} from 'react-bootstrap';
 
 const User = () => {
 
@@ -9,15 +10,13 @@ const User = () => {
     const [ user, setUser ] = useState(null);
     const cookie = new Cookies();
     cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
-    console.log(`${ serverUser }?access_token=${ searchParams.get( 'access_token' ) }`)
+
     useEffect(() => {
         fetch( `${ serverUser }?access_token=${ searchParams.get( 'access_token' )}`, {
             method: 'GET',
         }).then( async (res) => {
-            console.log(res)
             if(res.status === 200){
                 let json = await res.json()
-                console.log(json)
                 setUser(json.user)
             } else {
                 console.log('Error')
@@ -27,11 +26,37 @@ const User = () => {
             }
         })
     }, [searchParams]);
-    return (
+    console.log(user)
 
-    <div>
-        <h1>User</h1>
-    </div>
+    return (
+        <div>
+            <img src="" alt="" />
+            <div>
+                <h1>Personal info</h1>
+                <h3>Basic info, like your name and photo</h3>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <h2>Profile</h2>
+                        <span>Some info may be visible to other people</span>
+                    </div>
+                    <button>Edit</button>
+                </div>
+                <Table>
+                    <tbody>
+                    {user.map( (item) => {
+                        return (
+                                <tr>
+                                    <td>{item.name}</td>
+                                    <td>{item.value}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </Table>
+            </div>
+        </div>
     )
 };
 
