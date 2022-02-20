@@ -7,7 +7,7 @@ import {Table} from 'react-bootstrap';
 const User = () => {
 
     const [ searchParams, setSearchParams ] = useSearchParams();
-    const [ user, setUser ] = useState(null);
+    const [ user, setUser ] = useState(undefined);
     const [ isLoading, setIsLoading ] = useState(true);
     const cookie = new Cookies();
     cookie.set('access_token', searchParams.get('access_token') , {path: '/'});
@@ -49,14 +49,14 @@ const User = () => {
                 </div>
                 <Table>
                     <tbody>
-                    {user.map( (item) => {
+                    {user ?  user.map( (item) => {
                         return (
                                 <tr>
                                     <td>{item.name}</td>
                                     {/* <td>{item.value}</td> */}
                                 </tr>
                             )
-                        })}
+                        }): null}
                     </tbody>
                 </Table>
             </div>
