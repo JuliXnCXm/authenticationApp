@@ -18,6 +18,7 @@ const User = () => {
         }).then( async (res) => {
             if(res.status === 200){
                 let json = await res.json()
+                console.log(json)
                 setUser(json.user)
             } else {
                 console.log('Error')
@@ -26,11 +27,11 @@ const User = () => {
                 } , 3000)
             }
         })
-    }, [searchParams]);
+    }, [searchParams,user]);
 
     setTimeout(() => {
         setIsLoading(false)
-    }, 10000);
+    }, 4000);
 
     return (isLoading ? <div>Loading...</div> : (
         <div>
