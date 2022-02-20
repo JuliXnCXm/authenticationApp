@@ -37,23 +37,21 @@ const User = () => {
                 <h3>Basic info, like your name and photo</h3>
             </div>
             <div>
-                <div>
-                    <div>
-                        <h2>Profile</h2>
-                        <span>Some info may be visible to other people</span>
-                    </div>
-                    <button>Edit</button>
-                </div>
                 <Table>
                     <tbody>
-                    {user ?  user.map((item) => {
-                        return (
-                                <tr>
-                                    <td>{item.name}</td>
-                                    {/* <td>{item.value}</td> */}
-                                </tr>
-                            )
-                        }): null}
+                        <tr>
+                            <td>
+                                <h2>Profile</h2>
+                                <span>Some info may be visible to other people</span>
+                            </td>
+                            <td>
+                                <button>Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td>{user.name}</td>
+                        </tr>
                     </tbody>
                 </Table>
             </div>
