@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Form, Button , InputGroup, FormControl} from 'react-bootstrap'
 import useAuth from '../hooks/useAuth'
 import '../styles/FormAuth.css'
@@ -17,7 +17,7 @@ const FormAuth = ({setLogin}) => {
                         email
                     </span>
                 </InputGroup.Text>
-                <FormControl type="email" name="email" value={form.email} placeholder="Enter email" onChange={handleForm}/>
+                <FormControl type="text" name="email" value={form.email} placeholder="Enter email" onChange={handleForm}/>
             </InputGroup>
             <InputGroup className="mb-3 formContainer-password" controlId="formBasicPassword">
                 <InputGroup.Text className="icon">
