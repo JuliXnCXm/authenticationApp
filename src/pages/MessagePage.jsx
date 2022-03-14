@@ -19,7 +19,7 @@ const MessagePage = () => {
             <Message error={true}/>
             <div className='text'>
               <h2>Error while authenticating</h2>
-              <p>If you`re already registered login otherwise sign up first</p>
+              <p>If you`re already registered login, otherwise sign up first</p>
             </div>
             <p>you will be redirected in {counter} seconds</p>
         </div>
