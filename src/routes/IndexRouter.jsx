@@ -1,6 +1,6 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
-import Message from '../components/Message';
+import Message from '../pages/MessagePage';
 import Home from '../pages/Home';
 import User from '../pages/User';
 import UserEditInfo from '../pages/UserEditInfo';
