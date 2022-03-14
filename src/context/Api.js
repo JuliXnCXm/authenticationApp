@@ -1,5 +1,4 @@
-// const server = "https://authentionappbackend.herokuapp.com/";
-const server = "http://localhost:3000/";
+const server = "https://authentionappbackend.herokuapp.com/";
 const apiLogin = `${server}api/login`;
 const serverUser = `${server}user`;
 const apiRegister = `${server}api/register`;
