@@ -29,9 +29,6 @@
     font-size: 40px;
 }
 
-.DeleteModalContainer__buttons--danger{}
-.DeleteModalContainer__buttons--success{}
-
 @keyframes deleteIcon {
     0% {
         transform: scale(1);
@@ -42,4 +39,12 @@
     100% {
         transform: scale(1);
     }
+}
+
+@media screen and (max-width: 768px) {
+    .DeleteModalContainer {
+        width: 90%;
+        border-radius: 45px;
+    }
+
 }

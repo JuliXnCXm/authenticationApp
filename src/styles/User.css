@@ -21,4 +21,8 @@
     margin-bottom: 40px;
 }
 
-
+@media screen and (max-width: 768px) {
+    .userContainer {
+        top:5px
+    }
+}

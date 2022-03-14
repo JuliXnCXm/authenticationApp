@@ -58,3 +58,34 @@ li {
 .userinfo__table--header__button:hover {
     background-color: #d0d0d0;
 }
+
+@media screen and (max-width:768px) {
+    .userinfo__table--container {
+        width: 100%;
+    }
+    #left {
+        width: 100%;
+        margin-right: 0px;
+    }
+    .userinfo__table--container li {
+        border: none;
+        border-bottom:1px solid #E0E0E0;
+        padding: 20px 35px 25px 0px;
+    }
+
+    .userinfo__table--container li:first-child {
+        border: none;
+    }
+    .userinfo__table--container li:last-child {
+        border: none;
+    }
+    .userinfo__table--header__button {
+        left: 0px;
+    }
+    .userContainer--header__icon {
+        right: 20px;
+    }
+    .userinfo__table--body ul {
+        padding-left : 0rem;
+    }
+}

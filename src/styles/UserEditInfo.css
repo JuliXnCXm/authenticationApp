@@ -36,3 +36,19 @@
     justify-content: space-between;
     margin: 15px;
 }
+
+
+@media screen  and (max-width: 768px) {
+
+    .editInfoContainer {
+        width: 90%;
+        left: 0px;
+    }
+    .userEditInfoContainer {
+        border:none
+    }
+    .userEditInfoContainer > form {
+        width: 90%;
+    }
+
+}
