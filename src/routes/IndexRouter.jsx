@@ -13,6 +13,7 @@ const IndexRouter = () => {
             <Route path="/user" element={<User/>}/>
             <Route path="/userEditInfo/:id" element={<UserEditInfo/>}/>
             <Route path="/oauth/login/user" element={<Token/>}/>
+            <Route path="/oauth/register/user" element={<Token/>}/>
             <Route path="/message" element={<Message/>}/>
             <Route path="*" element={<div>Not Found</div>}/>
         </Routes>
