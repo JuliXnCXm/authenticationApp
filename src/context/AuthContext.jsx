@@ -18,7 +18,7 @@ const AuthProvider = ({children}) => {
         if (token !== null && token !== undefined) {
             setAuth( true )
         }
-    },[token])
+    },[])
 
     const getUser = async () => {
             fetch( `${ serverUser }`, {
@@ -59,6 +59,7 @@ const AuthProvider = ({children}) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
             },
             body: JSON.stringify(userData),
         }).then(async (res) => {
@@ -69,8 +70,11 @@ const AuthProvider = ({children}) => {
             } else {
                 console.log('Error')
             }
-        }).finally()
+        }).catch(err => {
+            console.log(err)
+        })
     }
+
     const handleLogin = async (userData) => {
         fetch(apiLogin, {
             method: 'POST',
@@ -93,8 +97,8 @@ const AuthProvider = ({children}) => {
     }
 
     const handleLogout = () => {
-        console.log("ddd")
         cookie.remove('token', { path: '/' })
+        localStorage.removeItem('user')
         setAuth(false)
         navigate(`/`)
     }

@@ -15,17 +15,17 @@ const User = () => {
         e.preventDefault();
         navigate(`/userEditInfo/${user._id}`)
     }
-    localStorage.setItem('user', JSON.stringify({
+    localStorage.setItem( 'user', JSON.stringify( {
         email: user.email,
         name: user.name,
         picture: user.picture,
-    }));
+    } ) );
 
     useEffect(() => {
         getUser();
     }, [])
 
-    return (isLoading ? <SpinnerLoader/> : (
+    return ( isLoading ? <SpinnerLoader/> : (
         <>
             <UserHeader user={user} />
             <div className='userContainer'>

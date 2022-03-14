@@ -1,4 +1,4 @@
-import React ,{useEffect, useState} from 'react'
+import React ,{useEffect, useState,useContext} from 'react'
 import UserHeader from '../components/UserHeader';
 import '../styles/UserEditInfo.css'
 import Signature from '../components/Signature';
@@ -9,28 +9,26 @@ import { Button } from 'react-bootstrap';
 import Modal from '../components/Modal';
 import DeleteModal from '../components/DeleteModal';
 
+
 const UserEditInfo = () => {
 
-    const [user, setUser] = useState(undefined)
     const [isLoading, setIsLoading] = useState(true)
     const [show, setShow] = useState(false);
+    const [user , setUser] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        let user = JSON.parse(localStorage.getItem('user'));
-        setUser(user);
-        if (user || user !== undefined) {
+        setUser(JSON.parse(localStorage.getItem('user')))
             setTimeout(() => {
                 setIsLoading(false)
             },2000)
-        }
     }, [])
 
     const handleClose = () => setShow(false);
 
 
     return (
-        ( isLoading ? <SpinnerLoader stroke={"#f36f60"}/> : (
+        ( isLoading ? <SpinnerLoader /> : (
         <>
             <UserHeader user={user}/>
             <div className='editInfoContainer'>

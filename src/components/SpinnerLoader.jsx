@@ -2,12 +2,19 @@ import React, {useEffect} from 'react'
 import '../styles/SpinnerLoader.css'
 
 
-const SpinnerLoader = ({stroke}) => {
+const SpinnerLoader = () => {
 
     useEffect(() => {
-        if (stroke !== undefined) {
-            document.querySelector('.path').style.stroke = stroke
-        }
+        const colors = [
+            "#228391",
+            "#ECECEC",
+            "#541212",
+            "#F58840",
+            "#6D9886",
+            "#4A403A",
+            "#EEC4C4"
+        ]
+        document.querySelector( '.path' ).style.stroke = colors[Math.round( Math.random() * colors.length )];
     }, [])
 
     return (

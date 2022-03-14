@@ -91,6 +91,12 @@ form input[type=file] {
     line-height: 18px;
 }
 
+.cameraIcon {
+    position: absolute;
+    top: 200px;
+    left: 75px
+}
+
 @keyframes camera {
     0% {
         transform: scale(1);

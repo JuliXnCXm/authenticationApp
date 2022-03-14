@@ -6,7 +6,7 @@ import useAuth from '../hooks/useAuth'
 const DeleteModal = ({handleClose}) => {
 
     const {handleDelete} = useAuth()
-    let user = JSON.parse(localStorage.getItem("user"))
+    
     return (
         <div className='DeleteModalContainer'>
             <h1>Are You Sure?</h1>

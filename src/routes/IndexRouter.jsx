@@ -1,9 +1,10 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom'
-import ErrorMessage from '../components/ErrorMessage';
+import Message from '../components/Message';
 import Home from '../pages/Home';
 import User from '../pages/User';
 import UserEditInfo from '../pages/UserEditInfo';
+import Token from '../pages/Token';
 
 const IndexRouter = () => {
     return (
@@ -11,7 +12,8 @@ const IndexRouter = () => {
             <Route path="/" element={<Home/>}/>
             <Route path="/user" element={<User/>}/>
             <Route path="/userEditInfo/:id" element={<UserEditInfo/>}/>
-            <Route path="/message" element={<ErrorMessage/>}/>
+            <Route path="/oauth/login/user" element={<Token/>}/>
+            <Route path="/message" element={<Message/>}/>
             <Route path="*" element={<div>Not Found</div>}/>
         </Routes>
     );
