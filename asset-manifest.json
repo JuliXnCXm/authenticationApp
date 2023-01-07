@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/authenticationApp/static/css/main.c9704758.css",
+    "main.js": "/authenticationApp/static/js/main.5fef8233.js",
+    "static/media/devchallenges-light.svg": "/authenticationApp/static/media/devchallenges-light.9afc1233b49cc0b301bbe890001f511a.svg",
+    "static/media/Twitter.svg": "/authenticationApp/static/media/Twitter.4104ffa7f00b85fbd54f0fe8d2904533.svg",
+    "static/media/Github.svg": "/authenticationApp/static/media/Github.f020857c72820eae3630f263c8cbd53a.svg",
+    "index.html": "/authenticationApp/index.html",
+    "static/media/Facebook.svg": "/authenticationApp/static/media/Facebook.1832314e9d4c2d7f1591a3a2b7dc1696.svg",
+    "static/media/Google.svg": "/authenticationApp/static/media/Google.c10671b3bfc6fa381836e8d0222e1afd.svg",
+    "main.c9704758.css.map": "/authenticationApp/static/css/main.c9704758.css.map",
+    "main.5fef8233.js.map": "/authenticationApp/static/js/main.5fef8233.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9704758.css",
+    "static/js/main.5fef8233.js"
+  ]
+}
